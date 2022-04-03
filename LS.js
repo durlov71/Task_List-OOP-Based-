@@ -1,5 +1,3 @@
-function LS() {
-
-}
+function LS() {}
 
 export default LS();

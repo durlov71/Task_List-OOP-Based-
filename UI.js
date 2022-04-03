@@ -16,8 +16,18 @@ UI.prototype.addToUI = function(task) {
 `;
     document.querySelector('.task-list').insertAdjacentHTML('afterbegin', newHtml);
 }
+
 UI.prototype.resetForm = function() {
     document.querySelector('#newtaskID').value = '';
+}
+
+UI.prototype.deleteTask = function(e) {
+    const task = e.target.parentElement.parentElement
+    task.remove();
+}
+UI.prototype.completeTask = function(e) {
+    const task = e.target.parentElement.parentElement
+    task.classList.toggle('completed');
 }
 
 export default UI;
