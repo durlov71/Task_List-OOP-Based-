@@ -18,6 +18,9 @@ document.querySelector('.AddTaskBtn').addEventListener('click', (e) => {
 })
 
 document.querySelector('.task-list').addEventListener('click', e => {
+    if (e.target.className.includes('task__op_edit')) {
+        ui.editTask(e);
+    }
     // console.log(e.target.className);
     if (e.target.className.includes('task__op_delete')) {
         // console.log("delete button Pressed")
@@ -27,4 +30,10 @@ document.querySelector('.task-list').addEventListener('click', e => {
         // console.log("check Button Pressed")
         ui.completeTask(e);
     }
+})
+document.querySelector('.EditTaskBtn').addEventListener('click', e => {
+    ui.updateTask(e);
+})
+document.querySelector('.CancelTaskBtn').addEventListener('click', e => {
+    ui.cancelTask(e);
 })
